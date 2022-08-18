@@ -1,4 +1,4 @@
-package com.letelumiere.basic_springboot.bulletin;
+package com.letelumiere.basic_springboot.comment;
 
 import java.time.LocalDate;
 

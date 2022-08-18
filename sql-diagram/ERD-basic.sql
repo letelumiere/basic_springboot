@@ -1,10 +1,15 @@
+DROP TABLE `bulletin`;
+DROP TABLE `comments`;
+
 CREATE TABLE `bulletin` (
 	`title`	VARCHAR(255)	NULL,
 	`user`	VARCHAR(255)	NULL,
 	`password`	VARCHAR(255)	NULL,
 	`contents`	VARCHAR(255)	NULL,
 	`views`	VARCHAR(255)	NULL,
-	`time_created`	TIMESTAMP	NULL
+	`created_time`	TIMESTAMP NULL,
+    `modified_time`	TIMESTAMP NULL,
+    `deleted_time`	TIMESTAMP NULL
 );
 
 CREATE TABLE `comments` (
@@ -15,8 +20,7 @@ CREATE TABLE `comments` (
 	`password`	VARCHAR(255)	NULL,
 	`time_created`	TIMESTAMP DEFAULT NOW()	NULL
 );
-DROP TABLE `bulletin`;
-DROP TABLE `comments`;
+
 -- 게시판 조회 쿼리
 SELECT * FROM bulletin;
 
