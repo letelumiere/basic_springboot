@@ -1,4 +1,4 @@
-package com.letelumiere.basic_springboot.bulletin;
+package com.letelumiere.basic_springboot.domain.repository;
 
 import java.util.List;
 import java.util.Map;
@@ -7,10 +7,15 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
+import com.letelumiere.basic_springboot.domain.model.Bulletin;
+
 
 @Repository
 public interface BulletinRepository extends JpaRepository<Bulletin, Long>{
-    /*
+
+
+    
+    /*  
     public List<BulletinVo> readAll();
     
     public List<BulletinVo> readAllByUser(String user_id);

@@ -1,10 +1,8 @@
-package com.letelumiere.basic_springboot.dto;
+package com.letelumiere.basic_springboot.domain.model;
 
 import java.time.LocalDate;
 
 import org.modelmapper.ModelMapper;
-
-import com.letelumiere.basic_springboot.entity.Bulletin;
 
 import lombok.*;
 //DTO(Data Transfer Object)로서 계층(Layer)간 데이터 교환을 위해 사용하는 객체이다.
@@ -19,7 +17,7 @@ public class BulletinDTO {
     private String user;
     private String contents;
     private String password;
-
+    
     public Bulletin toEntity(){
         return Bulletin.builder().title(title).contents(contents).password(password).build();
     }

@@ -1,4 +1,4 @@
-package com.letelumiere.basic_springboot.entity;
+package com.letelumiere.basic_springboot.domain.model;
 
 import java.time.LocalDate;
 

@@ -1,4 +1,4 @@
-package com.letelumiere.basic_springboot.service;
+package com.letelumiere.basic_springboot.domain;
 
 import java.util.List;
 import java.util.Optional;
@@ -11,9 +11,9 @@ import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
-import com.letelumiere.basic_springboot.dto.BulletinDTO;
-import com.letelumiere.basic_springboot.entity.Bulletin;
-import com.letelumiere.basic_springboot.repository.BulletinRepository;
+import com.letelumiere.basic_springboot.domain.model.Bulletin;
+import com.letelumiere.basic_springboot.domain.model.BulletinDTO;
+import com.letelumiere.basic_springboot.domain.repository.BulletinRepository;
 
 import lombok.AllArgsConstructor;
 import lombok.RequiredArgsConstructor;
@@ -31,7 +31,7 @@ public class BulletinService {
         Page<Bulletin> bulletin = bulletinRepository.findAll(pageable);
         return bulletin;
     }
-
+    
     public Bulletin readReferenceById(Long user_id){
         return bulletinRepository.getReferenceById(user_id);
     }

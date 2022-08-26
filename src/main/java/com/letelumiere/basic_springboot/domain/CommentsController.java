@@ -1,4 +1,4 @@
-package com.letelumiere.basic_springboot.comment;
+package com.letelumiere.basic_springboot.domain;
 
 import org.springframework.web.bind.annotation.RestController;
 

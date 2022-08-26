@@ -32,9 +32,9 @@ dependencies {
 	runtimeOnly 'mysql:mysql-connector-java'
 	annotationProcessor 'org.projectlombok:lombok'
 	providedRuntime 'org.springframework.boot:spring-boot-starter-tomcat'
-	testImplementation 'org.springframework.boot:spring-boot-starter-test'
-	// https://mvnrepository.com/artifact/org.modelmapper/modelmapper
 
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+	testImplementation group: 'org.junit.jupiter', name: 'junit-jupiter-api', version: '5.9.0'
 }
 
 tasks.named('test') {
