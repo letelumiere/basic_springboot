@@ -9,7 +9,6 @@ import lombok.Setter;
 @Data
 @Getter @Setter
 public class BulletinRecordDTO {    
-    private int views;
     private LocalDate created_time;
     private LocalDate modified_time;
     private LocalDate deleted_time;

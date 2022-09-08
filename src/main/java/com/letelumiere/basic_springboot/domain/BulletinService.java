@@ -26,16 +26,16 @@ public class BulletinService {
         return bulletinRepository.findAll();
     }
 
-    public Page<Bulletin> readAllWithPageable(int pageNum){
+    public List<Bulletin> readAllWithPageable(int pageNum){
         PageRequest pageable = PageRequest.of(pageNum, pageNum + 10);
         Page<Bulletin> bulletin = bulletinRepository.findAll(pageable);
-        return bulletin;
+        return bulletinRepository.findAll();
     }
-    
-    public Bulletin readReferenceById(Long user_id){
-        return bulletinRepository.getReferenceById(user_id);
+/*    
+    public BulletinDTO readReferenceById(String user_id){
+        return bulletinRepository.readReferenceByUserId(user_id);
     }
-
+ */
     public Optional<Bulletin> readById(Long title_id){
         return bulletinRepository.findById(title_id);
     }

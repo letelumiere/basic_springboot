@@ -6,9 +6,11 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
+import javax.persistence.Id;
 
+import org.hibernate.annotations.CreationTimestamp;
+import org.hibernate.annotations.UpdateTimestamp;
 import org.modelmapper.ModelMapper;
-import org.springframework.data.annotation.Id;
 
 import lombok.*;
 
@@ -18,6 +20,7 @@ import lombok.*;
 @AllArgsConstructor 
 @Entity(name = "bulletin")
 public class Bulletin {
+    
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
@@ -36,14 +39,15 @@ public class Bulletin {
     @Column(nullable = true)
     private int views;
 
+    @CreationTimestamp
     @Column(nullable = true)
     private LocalDate created_time;
 
+    @UpdateTimestamp
     @Column(nullable = true)
     private LocalDate modified_time;
 
+    @UpdateTimestamp
     @Column(nullable = true)
     private LocalDate deleted_time;
-
-
 }

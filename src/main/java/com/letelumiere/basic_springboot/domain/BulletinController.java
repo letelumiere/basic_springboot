@@ -1,6 +1,7 @@
 package com.letelumiere.basic_springboot.domain;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.apache.catalina.connector.Response;
 import org.modelmapper.ModelMapper;
@@ -41,19 +42,16 @@ public class BulletinController {
     }
 
     @GetMapping("/contents/page/{pageNum}")
-    public ResponseEntity<Page<Bulletin>> readAll(@PathVariable int pageNum){
+    public ResponseEntity<List<Bulletin>> readAll(@PathVariable int pageNum){
         return ResponseEntity.ok(bulletinService.readAllWithPageable(pageNum));
     }
 
+/* 
     @GetMapping("/user/{user_id}")
-    public ResponseEntity findByUserId(@PathVariable String user_id, @RequestBody Bulletin bulletin){
-        bulletinService.readAll();
-        return ResponseEntity.ok().build();
+    public ResponseEntity<BulletinDTO> findByUserId(@PathVariable String user_id){
+        return ResponseEntity.ok(bulletinService.readReferenceById(user_id));
     }
-
-
-    
-
+*/
     @DeleteMapping("/contents/{contents_id}")
     public ResponseEntity deleteContents(@PathVariable String contents_id, @RequestBody Bulletin bulletin){
         bulletinService.delete(bulletin);

@@ -2,6 +2,7 @@ DROP TABLE `bulletin`;
 DROP TABLE `comments`;
 
 CREATE TABLE `bulletin` (
+	`id` long	NOT NULL,
 	`title`	VARCHAR(255)	NULL,
 	`user`	VARCHAR(255)	NULL,
 	`password`	VARCHAR(255)	NULL,
@@ -18,19 +19,19 @@ CREATE TABLE `comments` (
 	`contents`	VARCHAR(255)	NULL,
 	`user`	VARCHAR(255)	NULL,
 	`password`	VARCHAR(255)	NULL,
-	`time_created`	TIMESTAMP DEFAULT NOW()	NULL
+	`created_time`	TIMESTAMP DEFAULT NOW()	NULL
 );
 
 -- 게시판 조회 쿼리
 SELECT * FROM bulletin;
 
-INSERT INTO bulletin(title, contents, user, password, time_created) VALUES ("아무말", "아무 컨텐츠", "아무 유저", "아무번호", NOW());
+INSERT INTO bulletin(id, title, contents, user, password, created_time) VALUES (0, "아무말", "아무 컨텐츠", "아무 유저", "아무번호", now());
 
 
 
 
-SELECT title, views, user, time_created FROM bulletin;
-SELECT title, views, user, time_created FROM bulletin ORDER BY time_created ASC;
-SELECT title, views, user, time_created FROM bulletin WHERE user;
+SELECT title, views, user, created_time FROM bulletin;
+SELECT title, views, user, created_time FROM bulletin ORDER BY created_time ASC;
+SELECT title, views, user, created_time FROM bulletin WHERE user;
 
 SELECT * FROM comments;
